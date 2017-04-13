@@ -1,0 +1,36 @@
+<% spoiler_strng = "#{@parsed_json["values"]["string"]}"%>
+<% enc_uri = "#{@parsed_json["values"]["enc_uri"]}"%>
+
+
+<div class="text-center">
+	<h1><%= spoiler_strng %></h1>
+	<br>
+	<%= image_tag @parsed_json["values"]["image"], :class => 'img-rounded img-responsive center-block'%>
+	<br><br>
+	<%= link_to "Generate", welcome_index_path, :method => :get, :class => 'btn btn-default btn-lg'%>
+	<br><br>
+	<%= social_share_button_tag(spoiler_strng, 
+	:popup => "true", 
+	:url => enc_uri,
+	desc: spoiler_strng,
+	'data-twitter-title' => spoiler_strng,
+	'data-facebook-title' => spoiler_strng)%>
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+			</div>
+			<div class="col-lg-2 gauche">
+				<button class="btn btn-danger" data-clipboard-action="cut" data-clipboard-target="#ShareLink">
+			    	Copy To Clipboard!
+				</button>
+			</div>
+			<div class="col-lg-4 corps">
+				<%= text_field "ShareLink", "ShareLink", :class => 'form-control js-copytextarea', :value =>  enc_uri, :id=>"ShareLink", :readonly => true%>
+			</div>
+	  		<div class="col-lg-3">
+	  		</div>
+	 	</div>
+	</div>
+	<br><br><br><br>
+</div>

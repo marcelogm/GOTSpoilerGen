@@ -1,0 +1,25 @@
+"pt-BR":
+  activerecord:
+    models:
+      person: Personagem
+      place: Lugar
+      thing: Acontecimento
+    attributes:
+      person:
+        id: "Código"
+        name: "Nome"
+        image: "Imagem"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      place:
+        id: "Código"
+        name: "Nome"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      thing:
+        id: "Código"
+        name: "Nome"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+
+      # will translate User attribute "login" as "Handle"
